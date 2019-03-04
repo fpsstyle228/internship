@@ -1,0 +1,35 @@
+
+<div class="panel">
+  <div class="form-inline">
+    <div class="from-group">
+      <div class="cont">
+        <input [(ngModel)]="text" placeholder="name" class="form-control" type="text">
+      </div>
+    </div>
+    <div class="from-group">
+      <div class="cont">
+        <input [(ngModel)]="price" placeholder="price" class="form-control" type="number">
+      </div>
+    </div>
+    <div class="from-group">
+      <div class="cont">
+       <button (click) = "addItem(text,price)">Add</button>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+          <th>Purchased</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of items">
+          <td>{{item.purchase}}</td>
+          <td>{{item.price}}</td>
+          <td><input type="checbox" [(ngModel)]="item.done"></td>
+      </tbody>
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>
